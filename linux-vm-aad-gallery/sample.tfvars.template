@@ -1,0 +1,15 @@
+env                       = "dev"
+# four characters, because whole Azure VM name can be a maximum of 15 characters in length
+project                   = "abcd"
+location                  = "australiaeast"
+groups                    = ["AzureOpsTeam"]
+subnet_name               = "AppSubnet"
+vnet_name                 = "xxx-nonprod-VNET"
+vnet_rg                   = "vnet-resource-group"
+image_name                = "Golden_Image_Redhat_RHEL_9"
+gallery_name              = "Golden_Images_prod"
+gallery_rg                = "Image-Builder"
+tenant_id                 = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+secondary_subscription_id = "e00232ca-xxxx-4e69-89cb-xxxxxxxxxxxx"
+auto_shutdown             = "true"
+additional_tags = {CustomTag = "NewValue"}

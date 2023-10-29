@@ -1,0 +1,9 @@
+env                       = "dev"
+# four characters, because whole Azure VM name can be a maximum of 15 characters in length
+project                   = "abcd"
+location                  = "australiaeast"
+groups                    = ["AzureOpsTeam"]
+subnet_name               = "AppSubnet"
+vnet_name                 = "xxx-nonprod-VNET"
+vnet_rg                   = "vnet-resource-group"
+auto_shutdown             = "true"
