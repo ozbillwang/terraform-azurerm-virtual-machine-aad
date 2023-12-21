@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+subscription=<vm_subscription_id>
+az account set -s ${subscription}
+az account show
+
+bastionName="<bastion_bastion_name>"
+bastionRG="<bastion_resource_group>"
+bastionSubID="<bastion_subscription_id>"
+
+vmName="<vm_name>"
+vmRG="<vm_rg>"
+
+vmId=$(az vm list --resource-group ${vmRG} --query "[?name=='$vmName'].id" --output tsv)
+echo $vmId
+
+az network bastion ssh --name "${bastionName}" --resource-group "${bastionRG}" --subscription ${bastionSubID} --target-resource-id "${vmId}" --auth-type AAD
