@@ -58,7 +58,7 @@ module "vm-aad" {
 
   location            = var.location
   image_os            = "linux"
-  resource_group_name = local.name
+  resource_group_name = azurerm_resource_group.this.name
   #checkov:skip=CKV_AZURE_50:Demo for extension
   allow_extension_operations = true
   boot_diagnostics           = false
